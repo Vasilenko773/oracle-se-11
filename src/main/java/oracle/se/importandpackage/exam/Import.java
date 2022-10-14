@@ -1,4 +1,4 @@
-package oracle.se.packag.exam;
+package oracle.se.importandpackage.exam;
 
 
 public class Import {

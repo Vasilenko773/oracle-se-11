@@ -1,4 +1,4 @@
-package oracle.se.packag;//import oracle.se.test.packag.Import;
+package oracle.se.importandpackage;//import oracle.se.test.packag.Import;
 //import oracle.se.test.packag.Import;
 
 public class TestImport {

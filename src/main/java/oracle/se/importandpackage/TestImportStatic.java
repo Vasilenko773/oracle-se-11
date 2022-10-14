@@ -1,4 +1,4 @@
-package oracle.se.packag;
+package oracle.se.importandpackage;
 
 import static java.lang.Math.*;
 

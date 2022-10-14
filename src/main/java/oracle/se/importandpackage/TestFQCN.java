@@ -1,6 +1,6 @@
-package oracle.se.packag;
+package oracle.se.importandpackage;
 
-import oracle.se.packag.exam.Import;
+import oracle.se.importandpackage.exam.Import;
 
 public class TestFQCN {
 

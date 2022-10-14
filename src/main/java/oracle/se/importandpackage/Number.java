@@ -1,4 +1,4 @@
-package oracle.se.packag;
+package oracle.se.importandpackage;
 
 /*import java.lang.Number;
 *
