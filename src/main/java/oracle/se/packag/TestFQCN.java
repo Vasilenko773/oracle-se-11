@@ -1,3 +1,7 @@
+package oracle.se.packag;
+
+import oracle.se.packag.exam.Import;
+
 public class TestFQCN {
 
 
@@ -6,7 +10,7 @@ public class TestFQCN {
      String s = "Печать теста в testFQSN";
         System.out.println(s);
 
-        oracle.se.exam.Import.main(args);
+        Import.main(args);
     }
 
 }
