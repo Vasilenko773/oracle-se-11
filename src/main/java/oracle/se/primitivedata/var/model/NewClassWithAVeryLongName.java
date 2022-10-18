@@ -1,4 +1,4 @@
-package oracle.se.var.model;
+package oracle.se.primitivedata.var.model;
 
 import lombok.*;
 

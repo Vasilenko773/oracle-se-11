@@ -1,4 +1,4 @@
-package oracle.se.var;
+package oracle.se.primitivedata.var;
 
 public class VarDonts {
 

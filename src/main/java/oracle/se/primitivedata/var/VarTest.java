@@ -1,7 +1,7 @@
-package oracle.se.var;
+package oracle.se.primitivedata.var;
 
 
-import oracle.se.var.model.NewClassWithAVeryLongName;
+import oracle.se.primitivedata.var.model.NewClassWithAVeryLongName;
 
 public class VarTest {
 
