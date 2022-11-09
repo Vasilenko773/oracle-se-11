@@ -22,16 +22,16 @@ public class ThrowableExample {
         }
     }
 
-    public static  void printErrorStructure(Object o) {
+    public static void printErrorStructure(Object o) {
         Class parent = o.getClass();
         String prefix = "";
-        System.out.println("Error caught was: ");
+        System.out.println("Error");
         do {
             System.out.println(prefix + " " + parent.getName());
-            if (parent == null) break;
-
+            prefix += "--";
+            parent = parent.getSuperclass();
+            if (parent.getSuperclass() != null);
         } while (parent.getSuperclass() != null);
-        parent = parent.getSuperclass();
     }
 
     private void throwAnError() throws IOError {
