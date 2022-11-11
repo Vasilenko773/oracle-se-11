@@ -1,7 +1,5 @@
 package oracle.se.part1.polimorfizm;
 
-import lombok.ToString;
-
 import java.util.Arrays;
 
 public class CastExtras {

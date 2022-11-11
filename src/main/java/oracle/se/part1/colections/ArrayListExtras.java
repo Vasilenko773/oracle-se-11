@@ -1,8 +1,6 @@
 package oracle.se.part1.colections;
 
-import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;

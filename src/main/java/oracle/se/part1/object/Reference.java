@@ -3,7 +3,6 @@ package oracle.se.part1.object;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 public class Reference {
 
