@@ -49,6 +49,36 @@ public class FirstFinalTest {
         MyFirstExtendedClass obj3 = new MyFirstExtendedClass();
         obj3.doSomething();
         obj3.doSomethingFinal();
+        System.out.println("_________");
+        ExtendMeRequired obj4 = new ExtendMeRequired() {
+            @Override
+            public void doSomeThing() {
+
+            }
+        };
+        obj4.doSomethingFinal();
+        System.out.println(obj4.getClass().getName()); // анонимный класс, а не экземпляр ExtendMeRequired
+        System.out.println("_________");
+        MySecondExtendedClass obj5 = new MySecondExtendedClass();
+        obj5.doSomeThing();
+        obj5.doSomethingFinal();
+
+    }
+}
+
+abstract class ExtendMeRequired {
+    public abstract void doSomeThing();
+
+    public void doSomethingFinal() {
+        System.out.println("doSomethingFINAL in Abstract class ExtendMeRequired class");
+    }
+}
+
+class MySecondExtendedClass extends ExtendMeRequired {
+
+    @Override
+    public final void doSomeThing() {
+        System.out.println("Implements method of abstract class in MySecondExtendedClass");
     }
 }
 
