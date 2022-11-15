@@ -5,6 +5,7 @@ import lombok.Getter;
 public class EnclosedClass {
 
     public String outerName = "outer";
+    public InnerMemberClass innerClass = new InnerMemberClass();
 
     public EnclosedClass(String outerName) {
         this.outerName = outerName;
@@ -19,20 +20,27 @@ public class EnclosedClass {
     public class InnerMemberClass {
 
         private String instanceName = "instanceName";
+        public String outerName = "outer NAme";
 
         public String getOtherName() {
-            return outerName;
+            return EnclosedClass.this.outerName;
         }
+
+        public static final String staticName = "static name inner class";
 
     }
 
     public static void main(String[] args) {
         EnclosedClass enclosedClass = new EnclosedClass("ss");
         enclosedClass.doSomethingOnInstance();
+        EnclosedClass e = new EnclosedClass("external");
 
-       InnerMemberClass i = new EnclosedClass("Hello").new InnerMemberClass();
+        InnerMemberClass i = new EnclosedClass("Hello").new InnerMemberClass();
         InnerMemberClass i1 = new EnclosedClass("World").new InnerMemberClass();
         System.out.println(i.getOtherName());
         System.out.println(i1.getOtherName());
+        e.innerClass.instanceName = "testing";
+        System.out.println(e.innerClass.getInstanceName());
+
     }
 }
