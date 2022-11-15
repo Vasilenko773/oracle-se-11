@@ -20,10 +20,11 @@ public class EnclosedClass {
     public class InnerMemberClass {
 
         private String instanceName = "instanceName";
-        public String outerName = "outer NAme";
+        String outerName = "outer Name";
 
         public String getOtherName() {
-            return EnclosedClass.this.outerName;
+            String outerName = "first";
+            return outerName + " " + this.outerName + " " + EnclosedClass.this.outerName;
         }
 
         public static final String staticName = "static name inner class";
