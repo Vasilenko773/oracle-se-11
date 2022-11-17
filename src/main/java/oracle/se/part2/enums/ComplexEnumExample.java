@@ -6,7 +6,7 @@ enum WeeksDays {
     TUESDAY("Tues", "Long road ahead"),
     WEDNESDAY("Wed", "Hump day"),
     THURSDAY("Thurs", "TGIF - 1"),
-    SATURDAY("Sat", "Wonderful Weekend");
+    SATURDAY("Sat");
     String abbreviation;
     String description = "TGIF";
 
