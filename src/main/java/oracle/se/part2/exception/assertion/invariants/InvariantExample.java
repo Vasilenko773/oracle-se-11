@@ -39,12 +39,16 @@ public class InvariantExample {
         if (type == petType.CAT || type == petType.DOG) {
             if (age > 7) description = "SENIOR";
             else if (age < 1) description = (type == petType.CAT) ? "KITTEN" : "PUPPY";
+        }
+        else if (type == petType.PARROT) {
+            if (age > 45) description = "SENIOR";
+            else if (age < 1) description = "CHICK";
         } else {
             assert (type == petType.GERBIL || type == petType.HAMSTER);
             if (age > 3) description = "SENIOR";
             else if (age < 1) description = "PUP";
         }
-        assert (new ArrayList(Arrays.asList(new String[] {"ADULT", "SENIOR", "KITTEN", "PUPPY", "PUP"})).indexOf(description) > -1) :
+        assert (new ArrayList(Arrays.asList(new String[] {"ADULT", "SENIOR", "KITTEN", "PUPPY", "PUP", "CHICK"})).indexOf(description) > -1) :
         type + " " + age;
         return description;
     }

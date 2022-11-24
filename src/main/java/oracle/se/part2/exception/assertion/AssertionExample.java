@@ -1,5 +1,7 @@
 package oracle.se.part2.exception.assertion;
 
+import oracle.se.part2.exception.assertion.invariants.InvariantExample;
+
 public class AssertionExample {
 
     static {
@@ -29,15 +31,16 @@ public class AssertionExample {
     }
 
     public static void main(String[] args) {
+        InvariantExample.main(args);
         byte s2;
         short maxValue = Byte.MAX_VALUE + 1;
         assert maxValue >= Byte.MIN_VALUE && maxValue <= Byte.MAX_VALUE :
-        getAssertMessage(assertFlags.BYTE_OUT_OF_RANGE);
+//        getAssertMessage(assertFlags.BYTE_OUT_OF_RANGE);
        // voidAssertMessage(assertFlags.BYTE_OUT_OF_RANGE); - метод в утвержжении 2 не работает так как он void
 
         s2 = (byte) maxValue;
         System.out.println("short value = " + maxValue );
 
-        System.out.println("byte value = " + s2);
+//        System.out.println("byte value = " + s2);
     }
 }
