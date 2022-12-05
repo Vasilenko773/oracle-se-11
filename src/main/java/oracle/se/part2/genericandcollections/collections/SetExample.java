@@ -25,5 +25,17 @@ public class SetExample {
         System.out.println(h.equals(t));
         System.out.println(t.equals(i));
         System.out.println(i.equals(h));
+        System.out.println();
+        System.out.println("Added null");
+        h.add(null);
+        System.out.println(h.equals(i));
+        System.out.println();
+        TreeSet<Integer> treeSet = (TreeSet<Integer>) t;
+        System.out.println(treeSet);
+        System.out.println(treeSet.lower(1) + " : " + treeSet.lower(10) + " : " + treeSet.lower(20) + " : " + treeSet.lower(50) + " : " + treeSet.lower(51) + " : ");
+        System.out.println(treeSet.floor(1) + " : " + treeSet.floor(10) + " : " + treeSet.floor(20) + " : " + treeSet.floor(50) + " : " + treeSet.floor(51) + " : ");
+        System.out.println(treeSet.ceiling(1) + " : " + treeSet.ceiling(10) + " : " + treeSet.ceiling(20) + " : " + treeSet.ceiling(50) + " : " + treeSet.ceiling(51) + " : ");
+        System.out.println(treeSet.higher(1) + " : " + treeSet.higher(10) + " : " + treeSet.higher(20) + " : " + treeSet.higher(50) + " : " + treeSet.higher(51) + " : ");
+
     }
 }
