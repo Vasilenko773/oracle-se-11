@@ -1,4 +1,4 @@
-package oracle.se.part2.exception.collections;
+package oracle.se.part2.genericandcollections.collections;
 
 import java.util.ArrayList;
 import java.util.List;
