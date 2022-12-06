@@ -1,4 +1,4 @@
-package oracle.se.part2.genericandcollections.collections;
+package oracle.se.part2.exception.collections;
 
 import java.util.*;
 
