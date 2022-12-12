@@ -1,6 +1,8 @@
 package oracle.se.part2.stream;
 
 import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
 
 public class StreamCreationExample {
@@ -15,5 +17,16 @@ public class StreamCreationExample {
         }
         Stream<String> wordStream = builder.build();
         wordStream.forEach(System.out::println);
+        StreamCreationExample streamCreationExample = new StreamCreationExample();
+        System.out.println(streamCreationExample.streamSum());
+    }
+
+    public int streamSum() {
+
+        return List.of(1, 2, 3, 4, 5).stream().reduce(Integer::sum).get();
+    }
+
+    public int sum(int a, Integer b) {
+        return a + b;
     }
 }
