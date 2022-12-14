@@ -1,5 +1,6 @@
 package oracle.se.part2.concurrent;
 
+import java.util.Random;
 import java.util.stream.Stream;
 
 class MyCustomThread extends Thread {
@@ -44,10 +45,16 @@ public class CustomThreadCreator {
         t.interrupt();
 
 
-        while (t.isAlive()) {
-            System.out.println("\nWaiting for " + t.getName() + " to terminate");
-            Thread.sleep(150);
-        }
-        System.out.println("\nAll threads interrupted Terminating");
+        System.out.println("\nDemonstration using join");
+        Thread n2 = new Thread() {
+           public void run() {
+               new Random().ints(10,1,100).forEach(System.out::println);
+           }
+        };
+        n2.start();
+        n2.join();
+        System.out.println("The status of thread after join: ");
+        System.out.println("n2.isAlive=" + n2.isAlive());
+        System.out.println("n2.sInterrupted=" + n2.isInterrupted());
     }
 }
