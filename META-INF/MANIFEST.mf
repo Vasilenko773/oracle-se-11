@@ -1,0 +1,2 @@
+Main-Class: oracle.se.modules.sample.api.ControllerOne
+Class-Path: oracle.se.modules.sample.core.jar oracle.se.modules.sample.enity oracle.se.modules.sample.service.jar
