@@ -2,32 +2,39 @@ package oracle.se.part2.concurrent;
 
 import lombok.ToString;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@ToString
+
 class TheBallInTheAir {
+
     private String bellType = "Volleyball";
-    private int hit;
-    private Map<String, Integer> players = new TreeMap<>();
+    private AtomicInteger hit = new AtomicInteger(0);
+    private Map<String, Integer> players = Collections.synchronizedMap(new TreeMap<>());
 
     public int addHit(String player) {
-        this.hit++;
-        if (players.containsKey(player)) {
-            players.computeIfPresent(player, (k,v) -> ++v);
-        } else {
-            players.put(player, 1);
-        }
-        return this.hit;
+            if (players.containsKey(player)) {
+                players.computeIfPresent(player, (k, v) -> ++v);
+            } else {
+                players.put(player, 1);
+            }
+
+        return hit.incrementAndGet();
     }
 
+    @Override
+    public String toString() {
+        return "TheBallInTheAir{" +
+                "bellType='" + bellType + '\'' +
+                ", hit=" + this.hit.get() +" playres = " + players.values().stream().mapToInt(s -> s).sum() +
+                ", players=" + players + " " +
+                '}';
+    }
 }
 
 public class SynchronizedClass {
