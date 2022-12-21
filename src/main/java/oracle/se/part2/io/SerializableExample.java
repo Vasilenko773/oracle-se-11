@@ -7,24 +7,37 @@ import lombok.NoArgsConstructor;
 import java.io.*;
 
 @AllArgsConstructor
-@NoArgsConstructor
-class Animal{
-     int age;
-     int weight;
+class Animal {
+    int age;
+    int weight;
+
+    public Animal() {
+    }
 
     public Animal(int age) {
         this.age = age;
     }
 }
-class Pet extends Animal implements Serializable {
+
+class Pet extends Animal implements Externalizable {
     private String name;
     private String type;
     private transient boolean breed = true;
+    static int count;
+
+    public Pet() {
+    }
 
     public Pet(String name, String type) {
         super(1);
         this.name = name;
         this.type = type;
+    }
+
+    public Pet(int age, String name, boolean breed) {
+        super(age);
+        this.name = name;
+        this.breed = breed;
     }
 
     @Override
@@ -35,7 +48,18 @@ class Pet extends Animal implements Serializable {
                 ", breed='" + breed + '\'' +
                 ", age='" + age + '\'' +
                 ", weight='" + weight + '\'' +
+                ", count='" + count + '\'' +
                 '}';
+    }
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+        out.writeInt(age);
+    }
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+        age = in.readInt();
     }
 }
 
@@ -45,6 +69,7 @@ public class SerializableExample {
         Pet original = new Pet("Brandy", "Dog");
         original.age = 5;
         original.weight = 12;
+        Pet.count = 25;
         System.out.println("-------Original State-----------");
         System.out.println(original);
 
