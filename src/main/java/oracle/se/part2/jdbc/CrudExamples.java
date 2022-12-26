@@ -14,7 +14,7 @@ public class CrudExamples {
         }
     }
 
-    private static void addData(Connection connection) throws SQLException {
+    public static void addData(Connection connection) throws SQLException {
         String insertSQL = "insert into PERSON(PERSON_ID, NAME, AGE) " +
                 "values(?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(insertSQL)) {
@@ -25,7 +25,7 @@ public class CrudExamples {
         }
     }
 
-    private static void getData(Connection connection) throws SQLException {
+    public static void getData(Connection connection) throws SQLException {
         String selectSQL = "select * from PERSON";
         try (Statement stmt = connection.createStatement()) {
             ResultSet rs = stmt.executeQuery(selectSQL);
