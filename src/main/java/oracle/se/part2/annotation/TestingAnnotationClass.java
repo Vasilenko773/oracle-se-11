@@ -4,11 +4,17 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-@MySourceAnnotation
-@MyClassAnnotation
-@MyRuntimeAnnotation
+@MyRuntimeAnnotation(
+        author = "Bob",
+        version = 0.01,
+        description = "first annotation"
+)
 public class TestingAnnotationClass {
 
+    @MyClassAnnotation
+    String myField = "Annotated Field";
+
+    @MySourceAnnotation
     public void printRuntimeAnnotation() {
         Class c = this.getClass();
         showAnnotation(c);
