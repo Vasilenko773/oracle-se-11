@@ -9,7 +9,9 @@ import java.lang.reflect.Method;
         version = 0.01,
         description = "first annotation"
 )
-public class TestingAnnotationClass {
+@MyRepeatableAnnotation
+@MyRepeatableAnnotation(10)
+public class TestingAnnotationClass extends ParentClass implements SomeInterface{
 
     @MyClassAnnotation
     String myField = "Annotated Field";
@@ -28,9 +30,9 @@ public class TestingAnnotationClass {
 
     public void showAnnotation(Object e) {
         Annotation[] annotations = null;
-        if (e instanceof Class) annotations = ((Class)e).getDeclaredAnnotations();
+        if (e instanceof Class) annotations = ((Class)e).getAnnotations();
         else if (e instanceof Method) {
-            annotations = ((Method)e).getDeclaredAnnotations();
+            annotations = ((Method)e).getAnnotations();
         } else if (e instanceof Field) {
             annotations = ((Field)e).getDeclaredAnnotations();
         }
@@ -42,4 +44,27 @@ public class TestingAnnotationClass {
     public static void main(String[] args) {
         new TestingAnnotationClass().printRuntimeAnnotation();
     }
+
+    @Override
+    public void abstractMethod() {
+
+    }
+
+    @Override
+    public void interfaceMethod() {
+
+    }
+}
+
+@MyFirstInheritedAnnotation
+abstract class ParentClass {
+
+    @MyFirstInheritedAnnotation
+    public abstract void abstractMethod();
+}
+
+@MySecondInheritedAnnotation
+interface SomeInterface {
+    @MySecondInheritedAnnotation
+    void interfaceMethod();
 }
