@@ -20,10 +20,12 @@ class ExpensiveObjectProxy implements ExpensiveObject {
     private static ExpensiveObject object;
     @Override
     public void process() {
+        System.out.println("before");
         if (object == null) {
             object = new ExpensiveObjectImpl();
         }
         object.process();
+        System.out.println("after");
     }
 }
 

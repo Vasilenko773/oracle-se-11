@@ -1,11 +1,11 @@
-package interview;
+package interview.algoritm;
 
 import java.util.Arrays;
 
 public class BubbleSort {
 
     public static void main(String[] args) {
-        int[] array = {1, 14, 12};
+        int[] array = new int[]{1, 6, 5, 12, 4, 3, 17};
         sort(array);
         System.out.println(Arrays.toString(array));
     }
